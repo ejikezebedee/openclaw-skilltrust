@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">OpenClaw SkillTrust product hero</title>
+  <desc id="desc">Product banner showing trust scoring, quarantine evidence, and supply-chain review for AI-agent extensions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071018"/>
+      <stop offset="0.55" stop-color="#0b1824"/>
+      <stop offset="1" stop-color="#081119"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#63e66d"/>
+      <stop offset="1" stop-color="#54a3ff"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M0 708 C250 620 403 780 654 680 C879 591 1064 668 1600 545 L1600 900 L0 900 Z" fill="#0f2432" opacity="0.42"/>
+  <g opacity="0.18" stroke="#5ca8ff" stroke-width="1">
+    <path d="M170 188 H540 M150 260 H620 M210 332 H560 M95 404 H500"/>
+    <path d="M1180 120 H1450 M1120 198 H1510 M1050 276 H1460 M1160 354 H1540"/>
+    <path d="M250 188 L350 260 L290 332 L390 404 M470 188 L550 260 L488 332"/>
+    <path d="M1220 120 L1300 198 L1240 276 L1340 354 M1420 120 L1480 198 L1400 276"/>
+  </g>
+
+  <g transform="translate(78 96)">
+    <text x="0" y="0" fill="#f8fbff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="78" font-weight="800">
+      OpenClaw <tspan fill="url(#accent)">SkillTrust</tspan>
+    </text>
+    <text x="0" y="58" fill="#c9d6e2" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="31">Trust scoring for AI-agent extensions</text>
+    <rect x="0" y="95" width="72" height="4" rx="2" fill="#63e66d"/>
+    <text x="0" y="162" fill="#ffffff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Evaluate. Verify. Trust with confidence.</text>
+    <text x="0" y="202" fill="#b6c5d2" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="21">Score, quarantine, and generate evidence for</text>
+    <text x="0" y="232" fill="#b6c5d2" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="21">AI-agent skills, plugins, MCP tools, and connectors.</text>
+
+    <g transform="translate(0 306)">
+      <rect width="392" height="84" rx="12" fill="#0c1a24" stroke="#264457"/>
+      <circle cx="42" cy="42" r="23" fill="#102b2c" stroke="#63e66d"/>
+      <path d="M42 25 L58 33 V48 C58 60 49 66 42 70 C35 66 26 60 26 48 V33 Z" fill="none" stroke="#63e66d" stroke-width="3"/>
+      <text x="86" y="35" fill="#75ef7a" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="21" font-weight="700">Trust Scoring</text>
+      <text x="86" y="63" fill="#b8c9d7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">Severity-weighted risk and capability review.</text>
+    </g>
+    <g transform="translate(0 414)">
+      <rect width="392" height="84" rx="12" fill="#0c1a24" stroke="#264457"/>
+      <circle cx="42" cy="42" r="23" fill="#102032" stroke="#5da3ff"/>
+      <path d="M42 25 L58 34 V50 C58 61 50 67 42 71 C34 67 26 61 26 50 V34 Z" fill="none" stroke="#5da3ff" stroke-width="3"/>
+      <path d="M42 38 V53" stroke="#5da3ff" stroke-width="3"/>
+      <text x="86" y="35" fill="#75b5ff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="21" font-weight="700">Quarantine Evidence</text>
+      <text x="86" y="63" fill="#b8c9d7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">Isolate risky extensions without deleting source.</text>
+    </g>
+    <g transform="translate(0 522)">
+      <rect width="392" height="84" rx="12" fill="#0c1a24" stroke="#264457"/>
+      <circle cx="42" cy="42" r="23" fill="#102b2c" stroke="#63e66d"/>
+      <path d="M30 45 C36 31 51 31 56 42 C60 52 49 62 40 55" fill="none" stroke="#63e66d" stroke-width="3"/>
+      <text x="86" y="35" fill="#75ef7a" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="21" font-weight="700">Supply-Chain Review</text>
+      <text x="86" y="63" fill="#b8c9d7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">BOM, policy packs, provenance, and CI proof.</text>
+    </g>
+  </g>
+
+  <g transform="translate(618 88)">
+    <rect width="896" height="650" rx="18" fill="#08141d" stroke="#294557"/>
+    <g transform="translate(34 34)">
+      <rect width="274" height="472" rx="14" fill="#0c1822" stroke="#263b4c"/>
+      <text x="24" y="36" fill="#ffffff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">TRUST SCORE</text>
+      <path d="M70 190 A86 86 0 0 1 228 190" fill="none" stroke="#244153" stroke-width="24" stroke-linecap="round"/>
+      <path d="M70 190 A86 86 0 0 1 204 121" fill="none" stroke="#63e66d" stroke-width="24" stroke-linecap="round" filter="url(#softGlow)"/>
+      <text x="137" y="199" text-anchor="middle" fill="#ffffff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="58" font-weight="800">96</text>
+      <text x="137" y="232" text-anchor="middle" fill="#b8c9d7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20">/100</text>
+      <text x="137" y="270" text-anchor="middle" fill="#75ef7a" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">TRUSTED</text>
+      <g fill="#b8c9d7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">
+        <text x="24" y="322">Policy controls</text>
+        <text x="24" y="362">Runtime guard</text>
+        <text x="24" y="402">BOM evidence</text>
+      </g>
+      <g stroke-width="8" stroke-linecap="round">
+        <path d="M142 317 H238" stroke="#233746"/>
+        <path d="M142 317 H226" stroke="#63e66d"/>
+        <path d="M142 357 H238" stroke="#233746"/>
+        <path d="M142 357 H218" stroke="#63e66d"/>
+        <path d="M142 397 H238" stroke="#233746"/>
+        <path d="M142 397 H232" stroke="#63e66d"/>
+      </g>
+    </g>
+
+    <g transform="translate(334 34)">
+      <rect width="242" height="472" rx="14" fill="#0c1822" stroke="#263b4c"/>
+      <text x="24" y="36" fill="#ffffff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">QUARANTINE STATUS</text>
+      <path d="M121 96 L190 128 V200 C190 254 151 285 121 300 C91 285 52 254 52 200 V128 Z" fill="#112c55" stroke="#5da3ff" stroke-width="4"/>
+      <rect x="91" y="163" width="60" height="56" rx="8" fill="#5da3ff"/>
+      <path d="M99 163 V141 C99 126 109 116 121 116 C133 116 143 126 143 141 V163" fill="none" stroke="#5da3ff" stroke-width="8"/>
+      <text x="121" y="352" text-anchor="middle" fill="#83baff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="800">QUARANTINED</text>
+      <text x="121" y="386" text-anchor="middle" fill="#b8c9d7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">Risk isolated with</text>
+      <text x="121" y="409" text-anchor="middle" fill="#b8c9d7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">review evidence preserved.</text>
+    </g>
+
+    <g transform="translate(602 34)">
+      <rect width="260" height="472" rx="14" fill="#0c1822" stroke="#263b4c"/>
+      <text x="24" y="36" fill="#ffffff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">EVIDENCE REPORT</text>
+      <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">
+        <g transform="translate(24 70)">
+          <rect width="212" height="44" rx="8" fill="#0e1f2b" stroke="#223848"/>
+          <text x="14" y="27" fill="#ffffff">Static analysis</text>
+          <circle cx="188" cy="22" r="12" fill="#143b69"/><text x="188" y="27" text-anchor="middle" fill="#9dccff">3</text>
+        </g>
+        <g transform="translate(24 132)">
+          <rect width="212" height="44" rx="8" fill="#0e1f2b" stroke="#223848"/>
+          <text x="14" y="27" fill="#ffffff">Runtime guard</text>
+          <circle cx="188" cy="22" r="12" fill="#143b69"/><text x="188" y="27" text-anchor="middle" fill="#9dccff">5</text>
+        </g>
+        <g transform="translate(24 194)">
+          <rect width="212" height="44" rx="8" fill="#0e1f2b" stroke="#223848"/>
+          <text x="14" y="27" fill="#ffffff">Supply chain</text>
+          <circle cx="188" cy="22" r="12" fill="#143b69"/><text x="188" y="27" text-anchor="middle" fill="#9dccff">6</text>
+        </g>
+        <g transform="translate(24 256)">
+          <rect width="212" height="44" rx="8" fill="#0e1f2b" stroke="#223848"/>
+          <text x="14" y="27" fill="#ffffff">Provenance</text>
+          <circle cx="188" cy="22" r="12" fill="#143b69"/><text x="188" y="27" text-anchor="middle" fill="#9dccff">2</text>
+        </g>
+      </g>
+      <rect x="24" y="386" width="212" height="44" rx="8" fill="#10351f" stroke="#2f7d46"/>
+      <text x="130" y="414" text-anchor="middle" fill="#75ef7a" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">Evidence Ready</text>
+    </g>
+
+    <g transform="translate(34 534)">
+      <rect width="828" height="82" rx="14" fill="#0c1822" stroke="#263b4c"/>
+      <text x="24" y="32" fill="#ffffff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="800">Open source. Transparent. Built for defenders.</text>
+      <text x="24" y="60" fill="#b8c9d7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">Local-first review for skills, plugins, MCP tools, connectors, and AI supply-chain evidence.</text>
+      <rect x="680" y="23" width="118" height="36" rx="18" fill="#10351f" stroke="#2f7d46"/>
+      <text x="739" y="47" text-anchor="middle" fill="#75ef7a" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">Verified</text>
+    </g>
+  </g>
+</svg>

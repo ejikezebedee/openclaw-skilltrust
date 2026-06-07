@@ -1,5 +1,7 @@
 # OpenClaw SkillTrust
 
+![OpenClaw SkillTrust product image](docs/assets/skilltrust-product-hero.svg)
+
 **Trust scoring for the agent toolchain.**
 
 OpenClaw SkillTrust is an open-source, defensive audit layer for AI-agent

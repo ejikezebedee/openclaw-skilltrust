@@ -31,6 +31,7 @@
 - [x] Quarantine readiness score reaches 98/100 for complete quarantine evidence
 - [x] Quarantine readiness is documented as separate from raw trust score
 - [x] GitHub-ready SVG screenshots show tests, quarantine readiness, and guard blocking
+- [x] Product hero image appears at the top of the README
 - [x] GitHub release gate documented near top of README
 - [x] Local cache/build/log files ignored before publication
 - [x] Repository line endings normalized for cross-platform buyers
