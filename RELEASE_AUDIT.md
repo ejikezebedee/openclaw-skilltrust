@@ -40,6 +40,7 @@
 - [x] GitHub Actions installs declared test dependency extras on clean runners
 - [x] GitHub Actions avoids provenance attestation on pull requests where token permissions may be restricted
 - [x] GitHub Actions skips provenance attestation for user-owned private repositories
+- [x] GitHub Actions opts into Node 24 action runtime compatibility
 - [x] GitHub Actions evidence artifacts have explicit retention
 - [x] CLI supports CycloneDX-style BOM export
 - [x] Evidence bundle includes BOM and supply-chain review artifacts
