@@ -1,0 +1,154 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "name": "Risky Demo Skill",
+      "properties": [
+        {
+          "name": "skilltrust:manifest_kind",
+          "value": "skill"
+        },
+        {
+          "name": "skilltrust:path",
+          "value": "SKILL.md"
+        }
+      ],
+      "scope": "required",
+      "type": "file",
+      "version": ""
+    },
+    {
+      "name": "risky-demo-skill",
+      "properties": [
+        {
+          "name": "skilltrust:manifest_kind",
+          "value": "plugin"
+        },
+        {
+          "name": "skilltrust:path",
+          "value": "plugin.json"
+        }
+      ],
+      "scope": "required",
+      "type": "file",
+      "version": ""
+    },
+    {
+      "name": "capability:credentials",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "credentials"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    },
+    {
+      "name": "capability:deployment",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "deployment"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    },
+    {
+      "name": "capability:shell",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "shell"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "name": "SkillTrust scanned extension",
+      "properties": [
+        {
+          "name": "skilltrust:target",
+          "value": "examples/sample-risky-skill"
+        },
+        {
+          "name": "skilltrust:policy",
+          "value": "skills"
+        },
+        {
+          "name": "skilltrust:verdict",
+          "value": "quarantine"
+        },
+        {
+          "name": "skilltrust:trust_score",
+          "value": "23"
+        }
+      ],
+      "type": "application",
+      "version": "local"
+    }
+  },
+  "serialNumber": "urn:uuid:00000000-0000-0000-0000-skilltrust-local",
+  "specVersion": "1.6",
+  "version": 1,
+  "vulnerabilities": [
+    {
+      "affects": [
+        {
+          "ref": "SKILL.md"
+        }
+      ],
+      "description": "Prompt-injection instruction",
+      "id": "ST005",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Remove instruction-hijacking language from installable extension content.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "SKILL.md"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "SKILL.md"
+        }
+      ],
+      "description": "Private local path reference",
+      "id": "ST002",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Replace private machine paths with relative paths or documented environment variables.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    }
+  ]
+}

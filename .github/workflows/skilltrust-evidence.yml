@@ -1,0 +1,56 @@
+name: SkillTrust Evidence
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: skilltrust-evidence-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e .
+
+      - name: Run tests
+        run: python -m pytest -q
+
+      - name: Generate safe evidence bundle
+        run: python -m skilltrust evidence ./examples/sample-safe-skill --policy repo-hygiene --output ./artifacts/safe-evidence
+
+      - name: Generate quarantine evidence bundle
+        run: python -m skilltrust evidence ./examples/sample-risky-skill --policy skills --output ./artifacts/quarantine-evidence
+
+      - name: Generate repository BOM
+        run: python -m skilltrust bom . --policy repo-hygiene --output ./artifacts/skilltrust-bom.json
+
+      - name: Attest evidence artifacts
+        if: github.event_name != 'pull_request'
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: ./artifacts/**
+
+      - name: Upload evidence artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: skilltrust-evidence
+          path: ./artifacts
+          retention-days: 14

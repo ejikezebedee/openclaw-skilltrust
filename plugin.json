@@ -1,0 +1,21 @@
+{
+  "name": "openclaw-skilltrust",
+  "version": "0.1.0",
+  "description": "Open-source trust and audit layer for AI-agent skills, MCP tools, plugins, and connectors.",
+  "project_status": "pre-release",
+  "license": "MIT",
+  "defensive_only": true,
+  "capabilities": [
+    "filesystem",
+    "manifest-analysis",
+    "trust-scoring",
+    "quarantine-evidence",
+    "markdown-reporting",
+    "json-reporting"
+  ],
+  "approval_gates": {
+    "external_publishing": true,
+    "core_enforcement": true,
+    "deployment": true
+  }
+}

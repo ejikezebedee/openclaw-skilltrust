@@ -1,0 +1,171 @@
+{
+  "assurance_level": "human-review-required",
+  "capabilities": [
+    "filesystem"
+  ],
+  "compliance_mappings": [
+    {
+      "control": "CC6.1 logical access controls",
+      "evidence": "policy controls: POL-003, RUN-001",
+      "framework": "SOC 2",
+      "status": "review"
+    },
+    {
+      "control": "AI system impact and risk treatment",
+      "evidence": "control/probe evidence: POL-003, RUN-001",
+      "framework": "ISO/IEC 42001",
+      "status": "review"
+    },
+    {
+      "control": "Prompt injection, sensitive data, excessive agency, and supply-chain review",
+      "evidence": "adversarial probes: no blocking evidence detected",
+      "framework": "OWASP LLM / Agentic",
+      "status": "pass"
+    },
+    {
+      "control": "Risk-management evidence and human oversight",
+      "evidence": "human oversight gates: POL-003, RUN-001",
+      "framework": "EU AI Act readiness",
+      "status": "review"
+    }
+  ],
+  "control_checks": [
+    {
+      "control_id": "POL-001",
+      "detail": "No policy block rules triggered.",
+      "status": "pass",
+      "title": "Blocking rule enforcement"
+    },
+    {
+      "control_id": "POL-002",
+      "detail": "No gated capabilities detected.",
+      "status": "pass",
+      "title": "Gated capability review"
+    },
+    {
+      "control_id": "POL-003",
+      "detail": "Review capabilities detected: filesystem",
+      "status": "review",
+      "title": "Declared review boundary"
+    },
+    {
+      "control_id": "EVD-001",
+      "detail": "Scanner collected findings or capability evidence.",
+      "status": "pass",
+      "title": "Evidence availability"
+    },
+    {
+      "control_id": "RUN-001",
+      "detail": "Runtime guard will require review for detected gated or review-boundary capabilities.",
+      "status": "review",
+      "title": "Runtime guard preview"
+    },
+    {
+      "control_id": "ADV-001",
+      "detail": "Adversarial probes did not detect high-risk prompt, exfiltration, install, or destructive-action evidence.",
+      "status": "pass",
+      "title": "Adversarial probe coverage"
+    }
+  ],
+  "findings": [],
+  "manifests": [
+    {
+      "declared_capabilities": [
+        "filesystem"
+      ],
+      "description": "This sample skill summarizes public documentation and writes a local Markdown report.",
+      "kind": "skill",
+      "name": "Safe Research Skill",
+      "path": "SKILL.md",
+      "raw_keys": []
+    },
+    {
+      "declared_capabilities": [
+        "filesystem"
+      ],
+      "description": "Safe mock skill for SkillTrust examples.",
+      "kind": "plugin",
+      "name": "safe-research-skill",
+      "path": "plugin.json",
+      "raw_keys": [
+        "capabilities",
+        "description",
+        "name"
+      ]
+    }
+  ],
+  "path": "examples/sample-safe-skill",
+  "policy": "baseline",
+  "probe_results": [
+    {
+      "category": "prompt-injection",
+      "detail": "No matching detector evidence appeared in scanned files.",
+      "mapped_risk": "OWASP LLM01 / Agentic excessive agency",
+      "probe_id": "PROBE-001",
+      "status": "pass",
+      "title": "No prompt-injection probe trigger detected"
+    },
+    {
+      "category": "credential-exfiltration",
+      "detail": "No matching detector evidence appeared in scanned files.",
+      "mapped_risk": "OWASP LLM02 / sensitive information disclosure",
+      "probe_id": "PROBE-002",
+      "status": "pass",
+      "title": "No credential-exfiltration probe trigger detected"
+    },
+    {
+      "category": "unsafe-install-flow",
+      "detail": "No matching detector evidence appeared in scanned files.",
+      "mapped_risk": "OWASP LLM05 / supply chain risk",
+      "probe_id": "PROBE-003",
+      "status": "pass",
+      "title": "No unsafe-install-flow probe trigger detected"
+    },
+    {
+      "category": "destructive-action",
+      "detail": "No matching detector evidence appeared in scanned files.",
+      "mapped_risk": "OWASP Agentic cascading impact",
+      "probe_id": "PROBE-004",
+      "status": "pass",
+      "title": "No destructive-action probe trigger detected"
+    },
+    {
+      "category": "instruction-boundary",
+      "detail": "No explicit boundary language detected; add least-privilege and human-review instructions.",
+      "mapped_risk": "OWASP Agentic human-agent trust boundaries",
+      "probe_id": "PROBE-005",
+      "status": "review",
+      "title": "Instruction boundary evidence"
+    }
+  ],
+  "quarantine_readiness": {
+    "factors": [
+      "No quarantine workflow required for this verdict."
+    ],
+    "score": 100,
+    "status": "not-required",
+    "title": "Quarantine readiness not required"
+  },
+  "remediation": [
+    "No blocking remediation detected; keep normal maintainer review."
+  ],
+  "runtime_decisions": [
+    {
+      "action": "write file to project directory",
+      "capability": "filesystem",
+      "decision": "review",
+      "matched_rule": "",
+      "policy": "baseline",
+      "reason": "Capability 'filesystem' is review-boundary activity under policy 'baseline'."
+    }
+  ],
+  "scanned_files": 2,
+  "schema": "openclaw.skilltrust.report.v1",
+  "score": 96,
+  "score_factors": [
+    "capability:filesystem: -4 exposure weight"
+  ],
+  "severity_counts": {},
+  "summary": "TRUSTED: score 96; no detector findings.",
+  "verdict": "trusted"
+}

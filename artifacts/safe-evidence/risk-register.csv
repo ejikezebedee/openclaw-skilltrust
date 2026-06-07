@@ -1,0 +1,2 @@
+id,severity,title,location,evidence,remediation,status
+NONE,info,No detector findings,examples/sample-safe-skill,,,closed

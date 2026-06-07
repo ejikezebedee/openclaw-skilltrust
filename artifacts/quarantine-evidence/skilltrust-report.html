@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkillTrust Evidence Report</title>
+  <style>
+    body { color: #172026; font-family: Arial, sans-serif; line-height: 1.5; margin: 32px; }
+    h1, h2 { color: #0f2937; }
+    .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    .metric { border: 1px solid #cbd5e1; border-radius: 6px; padding: 12px; }
+    .label { color: #475569; font-size: 12px; text-transform: uppercase; }
+    .value { font-size: 22px; font-weight: 700; }
+    table { border-collapse: collapse; width: 100%; }
+    td, th { border: 1px solid #cbd5e1; padding: 8px; text-align: left; vertical-align: top; }
+    th { background: #eef2f7; }
+    code { background: #eef2f7; padding: 2px 4px; }
+    @media print { body { margin: 18mm; } }
+  </style>
+</head>
+<body>
+  <h1>SkillTrust Evidence Report</h1>
+  <p>QUARANTINE: score 23; top issue ST005 Prompt-injection instruction.</p>
+  <div class="grid">
+    <div class="metric"><div class="label">Verdict</div><div class="value">quarantine</div></div>
+    <div class="metric"><div class="label">Trust Score</div><div class="value">23/100</div></div>
+    <div class="metric"><div class="label">Policy</div><div class="value">skills</div></div>
+    <div class="metric"><div class="label">Quarantine Readiness</div><div class="value">98/100 (remediation-ready)</div></div>
+  </div>
+  <h2>Executive Decision</h2>
+  <p>Keep isolated until remediation is reviewed and risk findings are resolved.</p>
+  <h2>Control Checks</h2>
+  <table><thead><tr><th>ID</th><th>Status</th><th>Control</th><th>Detail</th></tr></thead><tbody><tr><td>POL-001</td><td>fail</td><td>Blocking rule enforcement</td><td>Policy block rules triggered: ST005</td></tr><tr><td>POL-002</td><td>review</td><td>Gated capability review</td><td>Gated capabilities detected: credentials, deployment, shell</td></tr><tr><td>POL-003</td><td>pass</td><td>Declared review boundary</td><td>No review-boundary capabilities detected.</td></tr><tr><td>EVD-001</td><td>pass</td><td>Evidence availability</td><td>Scanner collected findings or capability evidence.</td></tr><tr><td>RUN-001</td><td>review</td><td>Runtime guard preview</td><td>Runtime guard will require review for detected gated or review-boundary capabilities.</td></tr><tr><td>ADV-001</td><td>review</td><td>Adversarial probe coverage</td><td>Adversarial probes should be reviewed because high-risk detector evidence exists.</td></tr><tr><td>SCM-001</td><td>pass</td><td>Security policy present</td><td>Repository includes SECURITY.md.</td></tr><tr><td>SCM-002</td><td>pass</td><td>Automated tests present</td><td>Repository includes a tests directory.</td></tr><tr><td>SCM-003</td><td>pass</td><td>Evidence workflow present</td><td>GitHub Actions evidence workflow is present.</td></tr><tr><td>SCM-004</td><td>pass</td><td>Workflow least-privilege permissions</td><td>Workflow declares least-privilege permissions.</td></tr><tr><td>SLSA-001</td><td>pass</td><td>Provenance attestation readiness</td><td>Workflow includes build provenance attestation readiness.</td></tr><tr><td>BOM-001</td><td>pass</td><td>BOM export available</td><td>SkillTrust can export a CycloneDX-style tool and capability inventory.</td></tr><tr><td>SCM-005</td><td>pass</td><td>Pinned GitHub Actions references</td><td>Workflow action references are version-pinned.</td></tr></tbody></table>
+  <h2>Findings</h2>
+  <table><thead><tr><th>ID</th><th>Severity</th><th>Finding</th><th>Location</th></tr></thead><tbody><tr><td>ST005</td><td>high</td><td>Prompt-injection instruction</td><td>SKILL.md:5</td></tr><tr><td>ST007</td><td>medium</td><td>Broad command execution capability</td><td>SKILL.md:6</td></tr><tr><td>ST002</td><td>high</td><td>Private local path reference</td><td>SKILL.md:7</td></tr></tbody></table>
+  <h2>Remediation</h2>
+  <ul><li>Remove instruction-hijacking language from installable extension content.</li><li>Document the command scope and require explicit approval for modifying commands.</li><li>Replace private machine paths with relative paths or documented environment variables.</li><li>Verify declared capabilities match maintainer intent before installation.</li></ul>
+</body>
+</html>

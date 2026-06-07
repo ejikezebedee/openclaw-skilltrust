@@ -1,0 +1,1015 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "name": "Risky Demo Skill",
+      "properties": [
+        {
+          "name": "skilltrust:manifest_kind",
+          "value": "skill"
+        },
+        {
+          "name": "skilltrust:path",
+          "value": "examples/sample-risky-skill/SKILL.md"
+        }
+      ],
+      "scope": "required",
+      "type": "file",
+      "version": ""
+    },
+    {
+      "name": "risky-demo-skill",
+      "properties": [
+        {
+          "name": "skilltrust:manifest_kind",
+          "value": "plugin"
+        },
+        {
+          "name": "skilltrust:path",
+          "value": "examples/sample-risky-skill/plugin.json"
+        }
+      ],
+      "scope": "required",
+      "type": "file",
+      "version": ""
+    },
+    {
+      "name": "Safe Research Skill",
+      "properties": [
+        {
+          "name": "skilltrust:manifest_kind",
+          "value": "skill"
+        },
+        {
+          "name": "skilltrust:path",
+          "value": "examples/sample-safe-skill/SKILL.md"
+        }
+      ],
+      "scope": "required",
+      "type": "file",
+      "version": ""
+    },
+    {
+      "name": "safe-research-skill",
+      "properties": [
+        {
+          "name": "skilltrust:manifest_kind",
+          "value": "plugin"
+        },
+        {
+          "name": "skilltrust:path",
+          "value": "examples/sample-safe-skill/plugin.json"
+        }
+      ],
+      "scope": "required",
+      "type": "file",
+      "version": ""
+    },
+    {
+      "name": "openclaw-skilltrust",
+      "properties": [
+        {
+          "name": "skilltrust:manifest_kind",
+          "value": "plugin"
+        },
+        {
+          "name": "skilltrust:path",
+          "value": "plugin.json"
+        }
+      ],
+      "scope": "required",
+      "type": "file",
+      "version": ""
+    },
+    {
+      "name": "openclaw-skilltrust",
+      "properties": [
+        {
+          "name": "skilltrust:manifest_kind",
+          "value": "python-project"
+        },
+        {
+          "name": "skilltrust:path",
+          "value": "pyproject.toml"
+        }
+      ],
+      "scope": "required",
+      "type": "file",
+      "version": ""
+    },
+    {
+      "name": "capability:browser",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "browser"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    },
+    {
+      "name": "capability:credentials",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "credentials"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    },
+    {
+      "name": "capability:deployment",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "deployment"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    },
+    {
+      "name": "capability:filesystem",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "filesystem"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    },
+    {
+      "name": "capability:memory",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "memory"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    },
+    {
+      "name": "capability:messaging",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "messaging"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    },
+    {
+      "name": "capability:network",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "network"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    },
+    {
+      "name": "capability:payment",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "payment"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    },
+    {
+      "name": "capability:scheduler",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "scheduler"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    },
+    {
+      "name": "capability:shell",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "shell"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "name": "SkillTrust scanned extension",
+      "properties": [
+        {
+          "name": "skilltrust:target",
+          "value": "."
+        },
+        {
+          "name": "skilltrust:policy",
+          "value": "repo-hygiene"
+        },
+        {
+          "name": "skilltrust:verdict",
+          "value": "block"
+        },
+        {
+          "name": "skilltrust:trust_score",
+          "value": "0"
+        }
+      ],
+      "type": "application",
+      "version": "local"
+    }
+  },
+  "serialNumber": "urn:uuid:00000000-0000-0000-0000-skilltrust-local",
+  "specVersion": "1.6",
+  "version": 1,
+  "vulnerabilities": [
+    {
+      "affects": [
+        {
+          "ref": "README.md"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "README.md"
+        }
+      ],
+      "description": "Production deployment capability",
+      "id": "ST008",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Gate deployment actions behind explicit approval and provenance evidence.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "RELEASE_AUDIT.md"
+        }
+      ],
+      "description": "Production deployment capability",
+      "id": "ST008",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Gate deployment actions behind explicit approval and provenance evidence.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "RELEASE_AUDIT.md"
+        }
+      ],
+      "description": "Destructive shell pattern",
+      "id": "ST003",
+      "ratings": [
+        {
+          "severity": "critical"
+        }
+      ],
+      "recommendation": "Remove destructive command patterns from extension instructions or scripts.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "artifacts/quarantine-evidence/skilltrust-report.json"
+        }
+      ],
+      "description": "Prompt-injection instruction",
+      "id": "ST005",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Remove instruction-hijacking language from installable extension content.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "artifacts/quarantine-evidence/skilltrust-report.json"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "artifacts/quarantine-evidence/skilltrust-report.json"
+        }
+      ],
+      "description": "Private local path reference",
+      "id": "ST002",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Replace private machine paths with relative paths or documented environment variables.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "artifacts/quarantine-evidence/skilltrust-report.json"
+        }
+      ],
+      "description": "Production deployment capability",
+      "id": "ST008",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Gate deployment actions behind explicit approval and provenance evidence.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "artifacts/quarantine-evidence/skilltrust-report.json"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "artifacts/quarantine-evidence/skilltrust-report.md"
+        }
+      ],
+      "description": "Prompt-injection instruction",
+      "id": "ST005",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Remove instruction-hijacking language from installable extension content.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "artifacts/quarantine-evidence/skilltrust-report.md"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "artifacts/quarantine-evidence/skilltrust-report.md"
+        }
+      ],
+      "description": "Private local path reference",
+      "id": "ST002",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Replace private machine paths with relative paths or documented environment variables.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-quarantine-bundle/skilltrust-report.json"
+        }
+      ],
+      "description": "Prompt-injection instruction",
+      "id": "ST005",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Remove instruction-hijacking language from installable extension content.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-quarantine-bundle/skilltrust-report.json"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-quarantine-bundle/skilltrust-report.json"
+        }
+      ],
+      "description": "Private local path reference",
+      "id": "ST002",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Replace private machine paths with relative paths or documented environment variables.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-quarantine-bundle/skilltrust-report.json"
+        }
+      ],
+      "description": "Production deployment capability",
+      "id": "ST008",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Gate deployment actions behind explicit approval and provenance evidence.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-quarantine-bundle/skilltrust-report.json"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-quarantine-bundle/skilltrust-report.md"
+        }
+      ],
+      "description": "Prompt-injection instruction",
+      "id": "ST005",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Remove instruction-hijacking language from installable extension content.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-quarantine-bundle/skilltrust-report.md"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-quarantine-bundle/skilltrust-report.md"
+        }
+      ],
+      "description": "Private local path reference",
+      "id": "ST002",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Replace private machine paths with relative paths or documented environment variables.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-report.json"
+        }
+      ],
+      "description": "Prompt-injection instruction",
+      "id": "ST005",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Remove instruction-hijacking language from installable extension content.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-report.json"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-report.json"
+        }
+      ],
+      "description": "Private local path reference",
+      "id": "ST002",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Replace private machine paths with relative paths or documented environment variables.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-report.json"
+        }
+      ],
+      "description": "Production deployment capability",
+      "id": "ST008",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Gate deployment actions behind explicit approval and provenance evidence.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-report.json"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-report.md"
+        }
+      ],
+      "description": "Prompt-injection instruction",
+      "id": "ST005",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Remove instruction-hijacking language from installable extension content.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-report.md"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/risky-report.md"
+        }
+      ],
+      "description": "Private local path reference",
+      "id": "ST002",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Replace private machine paths with relative paths or documented environment variables.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/sample-risky-skill/SKILL.md"
+        }
+      ],
+      "description": "Prompt-injection instruction",
+      "id": "ST005",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Remove instruction-hijacking language from installable extension content.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/sample-risky-skill/SKILL.md"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "examples/sample-risky-skill/SKILL.md"
+        }
+      ],
+      "description": "Private local path reference",
+      "id": "ST002",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Replace private machine paths with relative paths or documented environment variables.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "skilltrust/detectors.py"
+        }
+      ],
+      "description": "Private local path reference",
+      "id": "ST002",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Replace private machine paths with relative paths or documented environment variables.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "skilltrust/detectors.py"
+        }
+      ],
+      "description": "Curl pipe shell pattern",
+      "id": "ST004",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Use pinned downloads, checksums, and explicit review before execution.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "skilltrust/detectors.py"
+        }
+      ],
+      "description": "Prompt-injection instruction",
+      "id": "ST005",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Remove instruction-hijacking language from installable extension content.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "skilltrust/detectors.py"
+        }
+      ],
+      "description": "Credential exfiltration language",
+      "id": "ST006",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Do not request transmission of credentials or secret material.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "skilltrust/detectors.py"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "skilltrust/detectors.py"
+        }
+      ],
+      "description": "Production deployment capability",
+      "id": "ST008",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Gate deployment actions behind explicit approval and provenance evidence.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "skilltrust/runtime_guard.py"
+        }
+      ],
+      "description": "Curl pipe shell pattern",
+      "id": "ST004",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Use pinned downloads, checksums, and explicit review before execution.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "skilltrust/runtime_guard.py"
+        }
+      ],
+      "description": "Credential exfiltration language",
+      "id": "ST006",
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Do not request transmission of credentials or secret material.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "skilltrust/runtime_guard.py"
+        }
+      ],
+      "description": "Broad command execution capability",
+      "id": "ST007",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Document the command scope and require explicit approval for modifying commands.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "skilltrust/runtime_guard.py"
+        }
+      ],
+      "description": "Production deployment capability",
+      "id": "ST008",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Gate deployment actions behind explicit approval and provenance evidence.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "tests/test_skilltrust.py"
+        }
+      ],
+      "description": "Destructive shell pattern",
+      "id": "ST003",
+      "ratings": [
+        {
+          "severity": "critical"
+        }
+      ],
+      "recommendation": "Remove destructive command patterns from extension instructions or scripts.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "tests/test_skilltrust.py"
+        }
+      ],
+      "description": "Production deployment capability",
+      "id": "ST008",
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "recommendation": "Gate deployment actions behind explicit approval and provenance evidence.",
+      "source": {
+        "name": "SkillTrust"
+      }
+    }
+  ]
+}

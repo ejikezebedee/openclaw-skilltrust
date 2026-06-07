@@ -1,0 +1,5 @@
+{
+  "name": "safe-research-skill",
+  "description": "Safe mock skill for SkillTrust examples.",
+  "capabilities": ["filesystem"]
+}

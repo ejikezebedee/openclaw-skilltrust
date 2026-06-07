@@ -1,0 +1,77 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "name": "Safe Research Skill",
+      "properties": [
+        {
+          "name": "skilltrust:manifest_kind",
+          "value": "skill"
+        },
+        {
+          "name": "skilltrust:path",
+          "value": "SKILL.md"
+        }
+      ],
+      "scope": "required",
+      "type": "file",
+      "version": ""
+    },
+    {
+      "name": "safe-research-skill",
+      "properties": [
+        {
+          "name": "skilltrust:manifest_kind",
+          "value": "plugin"
+        },
+        {
+          "name": "skilltrust:path",
+          "value": "plugin.json"
+        }
+      ],
+      "scope": "required",
+      "type": "file",
+      "version": ""
+    },
+    {
+      "name": "capability:filesystem",
+      "properties": [
+        {
+          "name": "skilltrust:capability",
+          "value": "filesystem"
+        }
+      ],
+      "scope": "required",
+      "type": "service"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "name": "SkillTrust scanned extension",
+      "properties": [
+        {
+          "name": "skilltrust:target",
+          "value": "examples/sample-safe-skill"
+        },
+        {
+          "name": "skilltrust:policy",
+          "value": "repo-hygiene"
+        },
+        {
+          "name": "skilltrust:verdict",
+          "value": "trusted"
+        },
+        {
+          "name": "skilltrust:trust_score",
+          "value": "96"
+        }
+      ],
+      "type": "application",
+      "version": "local"
+    }
+  },
+  "serialNumber": "urn:uuid:00000000-0000-0000-0000-skilltrust-local",
+  "specVersion": "1.6",
+  "version": 1,
+  "vulnerabilities": []
+}

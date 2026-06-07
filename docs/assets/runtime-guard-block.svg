@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="320" viewBox="0 0 860 320" role="img" aria-label="SkillTrust runtime guard block screenshot">
+  <rect width="860" height="320" rx="8" fill="#101418"/>
+  <rect x="0" y="0" width="860" height="34" rx="8" fill="#20262d"/>
+  <circle cx="20" cy="17" r="6" fill="#ff5f57"/>
+  <circle cx="40" cy="17" r="6" fill="#ffbd2e"/>
+  <circle cx="60" cy="17" r="6" fill="#28c840"/>
+  <text x="84" y="22" fill="#d7dde5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">SkillTrust runtime guard</text>
+  <text x="28" y="64" fill="#88c0d0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">$ python3 -m skilltrust guard "run rm -rf /" --policy baseline --json</text>
+  <text x="28" y="100" fill="#d8dee9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">{</text>
+  <text x="48" y="128" fill="#d8dee9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">"action": "run rm -rf /",</text>
+  <text x="48" y="156" fill="#d8dee9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">"capability": "general",</text>
+  <text x="48" y="184" fill="#bf616a" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">"decision": "block",</text>
+  <text x="48" y="212" fill="#d8dee9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">"matched_rule": "ST003",</text>
+  <text x="48" y="240" fill="#d8dee9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">"policy": "baseline",</text>
+  <text x="48" y="268" fill="#a3be8c" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">"reason": "Blocked by runtime guard: destructive shell pattern."</text>
+  <text x="28" y="296" fill="#d8dee9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">}</text>
+</svg>

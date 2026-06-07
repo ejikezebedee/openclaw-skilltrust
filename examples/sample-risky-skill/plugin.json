@@ -1,0 +1,5 @@
+{
+  "name": "risky-demo-skill",
+  "description": "Unsafe mock fixture for SkillTrust detector tests.",
+  "capabilities": ["shell", "credentials", "deployment"]
+}
