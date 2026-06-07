@@ -39,6 +39,7 @@
 - [x] GitHub Actions workflow runs tests and generates safe/quarantine evidence artifacts
 - [x] GitHub Actions installs declared test dependency extras on clean runners
 - [x] GitHub Actions avoids provenance attestation on pull requests where token permissions may be restricted
+- [x] GitHub Actions skips provenance attestation for user-owned private repositories
 - [x] GitHub Actions evidence artifacts have explicit retention
 - [x] CLI supports CycloneDX-style BOM export
 - [x] Evidence bundle includes BOM and supply-chain review artifacts
@@ -78,6 +79,9 @@ Date: 2026-06-07
 - Risky fixture under `skills` policy: `QUARANTINE`, score `23/100`,
   quarantine readiness `98/100`
 - Runtime guard destructive command: `block`, matched rule `ST003`
+- Private GitHub repo workflow note: provenance attestation is skipped until
+  public release because GitHub does not offer attestations for user-owned
+  private repositories
 - Evidence artifacts regenerated under `./artifacts/safe-evidence` and
   `./artifacts/quarantine-evidence`
 - Repository BOM regenerated at `./artifacts/skilltrust-bom.json`

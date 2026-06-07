@@ -43,7 +43,7 @@ jobs:
         run: python -m skilltrust bom . --policy repo-hygiene --output ./artifacts/skilltrust-bom.json
 
       - name: Attest evidence artifacts
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && github.event.repository.private == false
         uses: actions/attest-build-provenance@v2
         with:
           subject-path: ./artifacts/**

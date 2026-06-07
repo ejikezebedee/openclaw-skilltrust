@@ -61,6 +61,8 @@ Before making it public, verify:
 - GitHub Actions completes the test and evidence workflow.
 - The uploaded `skilltrust-evidence` artifact contains safe and quarantine
   evidence bundles plus `skilltrust-bom.json`.
+- Provenance attestation is expected only after the repository is public;
+  private review runs still generate and upload evidence artifacts.
 - The quarantine readiness score remains visible and separate from raw trust
   score.
 - No real credentials, private machine paths, internal infrastructure details,
