@@ -11,6 +11,7 @@
 - [x] Release notes
 - [x] Safe examples
 - [x] Standard-library runtime
+- [x] Package metadata builds correctly on clean pip install
 - [x] No private tokens
 - [x] No required machine-specific paths
 - [x] Relative-path examples
@@ -36,6 +37,7 @@
 - [x] CLI supports `evidence` bundle generation for release review artifacts
 - [x] Evidence bundle includes JSON, Markdown, printable HTML, executive summary, risk register, and remediation checklist
 - [x] GitHub Actions workflow runs tests and generates safe/quarantine evidence artifacts
+- [x] GitHub Actions installs declared test dependency extras on clean runners
 - [x] GitHub Actions avoids provenance attestation on pull requests where token permissions may be restricted
 - [x] GitHub Actions evidence artifacts have explicit retention
 - [x] CLI supports CycloneDX-style BOM export
@@ -52,6 +54,7 @@ enforcement remain approval-gated.
 
 ## Verification
 
+- `python3 -m pip install ".[test]"`
 - `python3 -m pytest -q`
 - `python3 -m skilltrust scan ./examples/sample-risky-skill --summary`
 - `python3 -m skilltrust scan ./examples/sample-safe-skill --summary`
@@ -67,6 +70,10 @@ enforcement remain approval-gated.
 Date: 2026-06-07
 
 - Tests: `14 passed`
+- Package install: `openclaw-skilltrust 0.1.0` builds and installs with
+  `.[test]`
+- Clean-runner dependency fix: workflow installs `.[test]` before running
+  `pytest`
 - Safe fixture: `TRUSTED`, score `96/100`, quarantine readiness `100/100`
 - Risky fixture under `skills` policy: `QUARANTINE`, score `23/100`,
   quarantine readiness `98/100`

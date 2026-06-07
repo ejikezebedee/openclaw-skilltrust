@@ -111,6 +111,18 @@ Before making it public, verify:
 
 ## Quick Start
 
+Install locally:
+
+```bash
+python3 -m pip install .
+```
+
+Install test tooling for contributor verification:
+
+```bash
+python3 -m pip install ".[test]"
+```
+
 Scan a skill or plugin folder:
 
 ```bash
