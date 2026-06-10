@@ -10,9 +10,12 @@ from .policies import get_policy_pack
 
 
 BLOCK_PATTERNS: tuple[tuple[str, re.Pattern[str], str], ...] = (
-    ("ST003", re.compile(r"(?i)(rm\s+-rf\s+/|mkfs\.|dd\s+if=|chmod\s+777\s+/)"), "destructive shell pattern"),
-    ("ST004", re.compile(r"(?i)(curl|wget).{0,80}(\|\s*(sh|bash|zsh|python))"), "curl-pipe-shell pattern"),
-    ("ST006", re.compile(r"(?i)(send|upload|post).{0,80}(token|secret|password|credential|cookie)"), "credential exfiltration language"),
+    ("ST003", re.compile(r"(?i)(rm\s+-rf\s+/|mkfs\.|dd\s+if=|chmod\s+777\s+/|Remove-Item\s+.+-Recurse\s+.+-Force)"), "destructive shell pattern"),
+    ("ST004", re.compile(r"(?i)(curl|wget|irm|iwr|Invoke-WebRequest).{0,100}(\|\s*(sh|bash|zsh|python|iex|Invoke-Expression))"), "download-to-execute pattern"),
+    ("ST006", re.compile(r"(?i)(send|upload|post|exfiltrate|copy).{0,100}(token|secret|password|credential|cookie|\.env)"), "credential exfiltration language"),
+    ("ST009", re.compile(r"(?i)\b(eval|exec|Invoke-Expression|new Function)\s*\("), "unsafe dynamic code execution"),
+    ("ST010", re.compile(r"(?i)(base64\s+-d|frombase64string|atob\(|b64decode).{0,120}(eval|exec|iex|Invoke-Expression|bash|sh|powershell)"), "obfuscated execution chain"),
+    ("ST011", re.compile(r"(?i)(printenv|env\s*\||Get-ChildItem\s+Env:|process\.env|os\.environ).{0,120}(token|secret|password|credential|key|cookie|\*)"), "environment secret enumeration"),
 )
 
 

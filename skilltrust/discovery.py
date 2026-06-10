@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 SKIP_DIRS = {
@@ -49,13 +50,12 @@ def discover_files(root: Path, *, max_files: int = 500) -> list[Path]:
         return [root]
 
     files: list[Path] = []
-    for path in root.rglob("*"):
-        if len(files) >= max_files:
-            break
-        if any(part in SKIP_DIRS for part in path.parts):
-            continue
-        if not path.is_file():
-            continue
-        if path.name in IMPORTANT_NAMES or path.suffix.lower() in TEXT_SUFFIXES:
-            files.append(path)
+    for dirpath, dirnames, filenames in os.walk(root):
+        dirnames[:] = [dirname for dirname in dirnames if dirname not in SKIP_DIRS]
+        for filename in filenames:
+            if len(files) >= max_files:
+                return sorted(files)
+            path = Path(dirpath) / filename
+            if path.name in IMPORTANT_NAMES or path.suffix.lower() in TEXT_SUFFIXES:
+                files.append(path)
     return sorted(files)

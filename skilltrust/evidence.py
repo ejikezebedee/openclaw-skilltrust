@@ -11,6 +11,7 @@ from pathlib import Path
 from .models import TrustReport, portable_path
 from .bom import build_bom
 from .report_renderer import render_markdown
+from .sarif import write_sarif
 from .scanner import scan_path
 
 
@@ -27,6 +28,7 @@ def write_evidence_bundle(path: str | Path, output: str | Path, policy: str = "b
     )
     (out_dir / "skilltrust-report.md").write_text(render_markdown(report), encoding="utf-8")
     (out_dir / "skilltrust-report.html").write_text(render_html(report), encoding="utf-8")
+    write_sarif(report, out_dir / "skilltrust-report.sarif")
     (out_dir / "executive-summary.md").write_text(render_executive_summary(report), encoding="utf-8")
     (out_dir / "risk-register.csv").write_text(render_risk_register_csv(report), encoding="utf-8")
     (out_dir / "remediation-checklist.md").write_text(render_remediation_checklist(report), encoding="utf-8")
@@ -75,6 +77,7 @@ def render_executive_summary(report: TrustReport) -> str:
             "- `skilltrust-report.json`",
             "- `skilltrust-report.md`",
             "- `skilltrust-report.html`",
+            "- `skilltrust-report.sarif`",
             "- `risk-register.csv`",
             "- `remediation-checklist.md`",
             "- `skilltrust-bom.json`",

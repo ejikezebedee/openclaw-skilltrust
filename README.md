@@ -15,7 +15,7 @@ be trusted, reviewed, quarantined, or blocked?**
 SkillTrust scans extension manifests and source text, classifies capabilities,
 detects risky instructions, flags secret exposure and private-path leakage,
 builds a trust score, applies policy-pack control checks, and produces portable
-JSON or Markdown evidence reports.
+JSON, Markdown, HTML, CSV, SARIF, and BOM evidence reports.
 
 Stage 4 adds runtime-governance previews, controlled adversarial probe results,
 and compliance-oriented evidence mapping so reviewers can see how sensitive
@@ -80,7 +80,8 @@ Before making it public, verify:
   memory, messaging, scheduling, payments, deployment, and credential access.
 - Detects risky instructions such as command execution, curl-pipe-shell flows,
   destructive filesystem operations, prompt-injection language, private local
-  paths, and secret-like material.
+  paths, secret-like material, unsafe dynamic execution, obfuscated execution
+  chains, environment secret enumeration, and unpinned installs.
 - Scores trust from 0 to 100 with clear severity-weighted findings.
 - Adds enterprise evidence fields: policy pack, assurance level, severity
   breakdown, control checks, and explainable score factors.
@@ -97,8 +98,10 @@ Before making it public, verify:
   references, and BOM export.
 - Returns one of four verdicts: `trusted`, `review`, `quarantine`, or `block`.
 - Produces machine-readable JSON and maintainer-friendly Markdown reports.
+- Produces SARIF results for GitHub code scanning and other security review
+  systems.
 - Produces evidence bundles with JSON, Markdown, printable HTML, executive
-  summary, risk register, and remediation checklist artifacts.
+  summary, SARIF, risk register, and remediation checklist artifacts.
 - Can quarantine evidence locally without deleting source files.
 - Ships with GitHub Actions proof workflow for test and evidence artifact
   generation.
@@ -137,6 +140,12 @@ Write a Markdown report:
 
 ```bash
 python3 -m skilltrust scan ./examples/sample-safe-skill --markdown ./skilltrust-report.md
+```
+
+Write SARIF for code scanning:
+
+```bash
+python3 -m skilltrust scan ./examples/sample-risky-skill --sarif ./skilltrust-report.sarif
 ```
 
 Print a compact review summary:
@@ -215,6 +224,8 @@ The `evidence` command writes buyer- and maintainer-friendly artifacts:
 - `skilltrust-report.md`: maintainer review report.
 - `skilltrust-report.html`: printable executive report that can be saved as
   PDF from a browser.
+- `skilltrust-report.sarif`: SARIF 2.1.0 findings for code scanning and
+  security-review ingestion.
 - `executive-summary.md`: decision summary for repository or buyer review.
 - `risk-register.csv`: finding register for spreadsheet workflows.
 - `remediation-checklist.md`: release gate and remediation checklist.
@@ -256,6 +267,7 @@ python3 -m skilltrust policies
 - `scanner.py` coordinates discovery, manifest parsing, detection, and scoring.
 - `trust_score.py` produces score, verdict, and prioritized remediation.
 - `report_renderer.py` renders public Markdown reports.
+- `sarif.py` exports SARIF 2.1.0 findings for code scanning systems.
 - `bom.py` writes CycloneDX-style capability and finding inventories.
 - `evidence.py` writes executive report bundles for review artifacts.
 - `quarantine.py` writes review bundles without modifying source files.
@@ -283,6 +295,7 @@ skilltrust/
   probes.py           # controlled adversarial probes
   quarantine.py       # local review bundle writer
   report_renderer.py  # Markdown report renderer
+  sarif.py            # SARIF code-scanning exporter
   bom.py              # CycloneDX-style inventory writer
   evidence.py         # executive evidence bundle writer
   supply_chain.py     # supply-chain evidence controls

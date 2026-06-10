@@ -15,6 +15,7 @@ from .scanner import scan_path
 from .policies import list_policy_packs
 from .models import portable_path
 from .runtime_guard import evaluate_action
+from .sarif import write_sarif
 
 EXIT_BY_VERDICT = {
     "trusted": 0,
@@ -32,6 +33,7 @@ def main(argv: list[str] | None = None) -> int:
     scan.add_argument("path")
     scan.add_argument("--json", dest="json_path")
     scan.add_argument("--markdown")
+    scan.add_argument("--sarif")
     scan.add_argument("--summary", action="store_true")
     scan.add_argument("--fail-on", choices=["review", "quarantine", "block"])
     scan.add_argument(
@@ -82,9 +84,14 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "scan":
         report = scan_path(args.path, policy=args.policy)
         if args.json_path:
-            Path(args.json_path).write_text(json.dumps(report.to_dict(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
+            _write_text(
+                Path(args.json_path),
+                json.dumps(report.to_dict(), indent=2, sort_keys=True) + "\n",
+            )
         if args.markdown:
-            Path(args.markdown).write_text(render_markdown(report), encoding="utf-8")
+            _write_text(Path(args.markdown), render_markdown(report))
+        if args.sarif:
+            write_sarif(report, args.sarif)
         if args.summary:
             print(_render_summary(report))
         else:
@@ -142,6 +149,11 @@ def main(argv: list[str] | None = None) -> int:
 def _should_fail(verdict: str, threshold: str) -> bool:
     order = {"trusted": 0, "review": 1, "quarantine": 2, "block": 3}
     return order[verdict] >= order[threshold]
+
+
+def _write_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8")
 
 
 def _render_summary(report) -> str:

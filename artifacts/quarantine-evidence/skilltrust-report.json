@@ -291,9 +291,9 @@
     "ST005: -22 for high finding",
     "ST007: -10 for medium finding",
     "ST002: -22 for high finding",
-    "capability:credentials: -8 exposure weight",
     "capability:deployment: -7 exposure weight",
-    "capability:shell: -8 exposure weight"
+    "capability:shell: -8 exposure weight",
+    "capability:credentials: -8 exposure weight"
   ],
   "severity_counts": {
     "high": 2,

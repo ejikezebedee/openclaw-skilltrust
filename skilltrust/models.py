@@ -16,6 +16,8 @@ class Finding:
     line: int | None = None
     evidence: str = ""
     remediation: str = ""
+    category: str = "general"
+    confidence: str = "medium"
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -26,6 +28,8 @@ class Finding:
             "line": self.line,
             "evidence": self.evidence,
             "remediation": self.remediation,
+            "category": self.category,
+            "confidence": self.confidence,
         }
 
 

@@ -71,9 +71,6 @@ def supply_chain_checks(scan_root: Path) -> tuple[ControlCheck, ...]:
 
 
 def _release_root(scan_root: Path) -> Path:
-    cwd = Path.cwd().resolve()
-    if (cwd / "pyproject.toml").exists() and (cwd / "README.md").exists():
-        return cwd
     root = scan_root.resolve()
     candidates = [root] + list(root.parents)
     for candidate in candidates:
