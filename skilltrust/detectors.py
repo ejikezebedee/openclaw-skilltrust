@@ -120,6 +120,18 @@ RULES: tuple[Rule, ...] = (
         "supply-chain",
         "medium",
     ),
+    Rule(
+        "ST013",
+        "medium",
+        "Social account write action",
+        re.compile(
+            r"(?i)\b(post|publish|send|reply|upload|delete|follow|unfollow|like|retweet)\b.{0,80}\b"
+            r"(tweet|reply|direct message|dm|media|follower|x/twitter|twitter|social account)\b"
+        ),
+        "Document account scope, approval requirements, rate limits, and rollback steps for social-account write actions.",
+        "social-account",
+        "medium",
+    ),
 )
 
 

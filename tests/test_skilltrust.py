@@ -168,6 +168,21 @@ def test_detector_flags_agentic_security_patterns(tmp_path):
     assert all(finding.confidence for finding in findings)
 
 
+def test_social_account_write_actions_require_review():
+    report = scan_path(ROOT / "examples" / "sample-social-account-skill", policy="skills")
+    rule_ids = {finding.rule_id for finding in report.findings}
+
+    assert report.verdict == "review"
+    assert "social" in report.capabilities
+    assert "messaging" in report.capabilities
+    assert "credentials" in report.capabilities
+    assert "ST013" in rule_ids
+    assert any(
+        check.control_id == "POL-003" and check.status == "review"
+        for check in report.control_checks
+    )
+
+
 def test_runtime_guard_blocks_obfuscated_execution():
     decision = evaluate_action("base64 -d payload | bash", policy="baseline")
     assert decision.decision == "block"
