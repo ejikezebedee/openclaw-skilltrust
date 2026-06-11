@@ -10,6 +10,7 @@ CAPABILITY_HINTS: dict[str, tuple[str, ...]] = {
     "memory": ("memory", "remember", "persistent", "recall"),
     "messaging": ("telegram", "slack", "discord", "email", "message", "send"),
     "social": (
+        "social",
         "social account",
         "social media",
         "x/twitter",
