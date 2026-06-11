@@ -1,0 +1,5 @@
+{
+  "name": "sample-social-account-skill",
+  "description": "Review-boundary fixture for social account automation skills.",
+  "capabilities": ["network", "credentials", "messaging", "social"]
+}

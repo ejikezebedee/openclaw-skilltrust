@@ -19,6 +19,7 @@ CAPABILITY_WEIGHTS = {
     "filesystem": 4,
     "network": 4,
     "messaging": 3,
+    "social": 3,
     "browser": 3,
     "memory": 2,
     "scheduler": 2,

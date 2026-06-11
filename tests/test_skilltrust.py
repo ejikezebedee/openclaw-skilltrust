@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from skilltrust.bom import build_bom, write_bom
+from skilltrust.capabilities import normalize_capabilities
 from skilltrust.cli import main
 from skilltrust.detectors import detect_file
 from skilltrust.discovery import discover_files
@@ -166,6 +167,44 @@ def test_detector_flags_agentic_security_patterns(tmp_path):
     assert {"ST002", "ST009", "ST010", "ST011", "ST012"} <= rules
     assert all(finding.category for finding in findings)
     assert all(finding.confidence for finding in findings)
+
+
+def test_social_account_write_actions_require_review():
+    report = scan_path(ROOT / "examples" / "sample-social-account-skill", policy="skills")
+    rule_ids = {finding.rule_id for finding in report.findings}
+
+    assert report.verdict == "review"
+    assert "social" in report.capabilities
+    assert "messaging" in report.capabilities
+    assert "credentials" in report.capabilities
+    assert "ST013" in rule_ids
+    assert any(
+        check.control_id == "POL-003" and check.status == "review"
+        for check in report.control_checks
+    )
+
+
+def test_bare_social_manifest_capability_is_recognized():
+    assert normalize_capabilities(["social"]) == {"social"}
+
+
+def test_plural_social_write_objects_are_flagged(tmp_path):
+    skill = tmp_path / "SKILL.md"
+    skill.write_text(
+        "\n".join(
+            [
+                "# Social writer",
+                "Post tweets after approval.",
+                "Reply to tweets only after review.",
+                "Send direct messages when the account owner approves.",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+    findings = detect_file(skill, tmp_path)
+
+    assert [finding.rule_id for finding in findings].count("ST013") == 3
 
 
 def test_runtime_guard_blocks_obfuscated_execution():

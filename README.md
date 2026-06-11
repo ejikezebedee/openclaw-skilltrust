@@ -32,8 +32,8 @@ turning every plugin install into a blind trust decision.
 
 AI agents increasingly depend on skills, tool servers, connectors, and plugin
 manifests. Those extensions can request access to files, shell commands,
-network calls, memory, browsers, messaging systems, payments, deployments, or
-external services.
+network calls, memory, browsers, messaging systems, social accounts, payments,
+deployments, or external services.
 
 Open-source maintainers need a local-first way to review that trust boundary:
 
@@ -81,7 +81,8 @@ Before making it public, verify:
 - Detects risky instructions such as command execution, curl-pipe-shell flows,
   destructive filesystem operations, prompt-injection language, private local
   paths, secret-like material, unsafe dynamic execution, obfuscated execution
-  chains, environment secret enumeration, and unpinned installs.
+  chains, environment secret enumeration, social-account write actions, and
+  unpinned installs.
 - Scores trust from 0 to 100 with clear severity-weighted findings.
 - Adds enterprise evidence fields: policy pack, assurance level, severity
   breakdown, control checks, and explainable score factors.
